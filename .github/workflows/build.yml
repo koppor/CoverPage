@@ -25,4 +25,4 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: ctan
-          path: coverpage.tar.gz
+          path: CoverPage.tar.gz
