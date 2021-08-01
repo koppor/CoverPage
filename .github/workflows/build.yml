@@ -15,7 +15,7 @@ jobs:
       - name: SimpleSample.tex
         uses: dante-ev/latex-action@edge
         with:
-          root_file: SimpleExample.tex
+          root_file: SimpleSample.tex
           compiler: lualatex
           args: -interaction=nonstopmode -shell-escape
       - name: release.sh
