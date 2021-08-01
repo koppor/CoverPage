@@ -12,7 +12,7 @@ jobs:
           root_file: CoverPage.ins
           compiler: pdflatex
           args: -interaction=nonstopmode -shell-escape
-      - name: SimpleExample.tex
+      - name: SimpleSample.tex
         uses: dante-ev/latex-action@edge
         with:
           root_file: SimpleExample.tex
