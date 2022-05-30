@@ -36,4 +36,7 @@ The term "CoverPage package" refers to the following files:
 
 ## License
 
-`SPDX-License-Identifier: LPPL-1.3c+`
+```yaml
+SPDX-License-Identifier: LPPL-1.3c+
+```
+
