@@ -5,23 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-        uses: actions/checkout@v2
-      - name: CoverPage.ins
-        uses: dante-ev/latex-action@edge
+        uses: actions/checkout@v3
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v2
         with:
-          root_file: CoverPage.ins
-          compiler: pdflatex
-          args: -interaction=nonstopmode -shell-escape
-      - name: SimpleSample.tex
-        uses: dante-ev/latex-action@edge
-        with:
-          root_file: SimpleSample.tex
-          compiler: lualatex
-          args: -interaction=nonstopmode -shell-escape
-      - name: release.sh
-        uses: dante-ev/latex-action@edge
-        with:
-          entrypoint: ./release.sh
+          packages: >
+            pdflatex
+      - run: pdflatex -interaction=nonstopmode Coverpage.ins
+      - run: pdflatex -interaction=nonstopmode -shell-escape SimpleSample.tex
+      - run: rm SimpleSample.aux
+      - run: lualatex -interaction=nonstopmode -shell-escape SimpleSample.tex
+      - run: ./release.sh
       - uses: actions/upload-artifact@v2
         with:
           name: ctan
